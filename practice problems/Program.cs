@@ -10,7 +10,7 @@ namespace practice_problems
     {
         public int add(int n, int m)
         {
-
+            Console.Write("Addition : ");
             return n + m;
 
         }
