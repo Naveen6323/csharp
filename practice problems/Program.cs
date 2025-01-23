@@ -11,7 +11,8 @@ namespace practice_problems
 
         public int add(int n, int m)
         {
-            return n + m;
+            
+            return n;
 
         }
 
