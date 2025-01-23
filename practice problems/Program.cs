@@ -8,7 +8,12 @@ namespace practice_problems
 {
     internal class Program
     {
-        
+        public int add(int n, int m)
+        {
+
+            return n + m;
+
+        }
 
         public double armstring(int n)
         {
