@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -203,12 +204,12 @@ namespace practice_problems
 
         public void Verify(string user,string password)
         {
-            string user1 = "naveen";
-            string user1Pass = "naveen123";
-            if (user.Equals(user1))
+            Dictionary<string, string> d = new Dictionary<string, string>();
+            d.Add("naveen", "naveen123");
+            d.Add("sai", "sai123");
+            if (d.ContainsKey(user))
             {
-                //Console.WriteLine("password is correct");
-                if (password.Equals(user1Pass)) Console.WriteLine("login succesfull");
+                if (password.Equals(d[user])) Console.WriteLine("login succesfull");
                 else Console.WriteLine("password is incorrect");
             }
             else Console.WriteLine("user not exist");
@@ -226,7 +227,6 @@ namespace practice_problems
             double len = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
             //Console.WriteLine(len);
             //double length = Math.Sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
-
             int line1 = 33;
             int line2 = 43;
             //if (line1.Equals(line2)) Console.WriteLine("equal");
@@ -241,9 +241,9 @@ namespace practice_problems
             //p.ShowGrade(56);
             //p.TemperatureConverter();
             //p.TicketPrice();
-            //p.Verify("naven","naveen123");
-
-
+            //p.Verify("naveen", "naveen3");
+            
+            
 
 
         }
