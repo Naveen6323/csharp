@@ -94,10 +94,11 @@ namespace practice_problems
             int dailyWageEmployee = wagePerHr * fullDayHr;
             int partTimWageEmployee = wagePerHr * partTimeHr;
             int wageForMonth = wagePerHr * fullDayHr * workingDaysForMonth;
+            int wageForCondition = 100 * wagePerHr;
             bool loop = true;
             while (loop)
             {
-                Console.WriteLine("1 Attendence\n2 DailyWage\n3 PartTimeWage\n4 wageForMonth \n5 exit");
+                Console.WriteLine("1 Attendence\n2 DailyWage\n3 PartTimeWage\n4 wageForMonth \n5 WageForCondition\n6 exit");
                 int select = int.Parse(Console.ReadLine());
 
                 switch (select)
@@ -116,6 +117,10 @@ namespace practice_problems
                         Console.WriteLine("wageForMonth : " + wageForMonth);
                         break;
                     case 5:
+                        Console.WriteLine("Wage for Condition ----> "+wageForCondition);
+                        
+                        break;
+                   case 6:
                         loop = false;
                         break;
                     default:
@@ -141,19 +146,19 @@ namespace practice_problems
             int x2 = 4;
             int y2 = 5;
             double len = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
-            Console.WriteLine(len);
+            //Console.WriteLine(len);
             //double length = Math.Sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
 
             int line1 = 33;
             int line2 = 43;
-            if (line1.Equals(line2)) Console.WriteLine("equal");
-            else Console.WriteLine("not equal");
+            //if (line1.Equals(line2)) Console.WriteLine("equal");
+            //else Console.WriteLine("not equal");
 
 
             int x = line1.CompareTo(line2);
-            if (x == 1) Console.WriteLine("line1 is greater");
-            else if (x == -1) Console.WriteLine("line 2 is greater");
-            else Console.WriteLine("lines are equal");
+            //if (x == 1) Console.WriteLine("line1 is greater");
+            //else if (x == -1) Console.WriteLine("line 2 is greater");
+            //else Console.WriteLine("lines are equal");
 
             Employee();
 
