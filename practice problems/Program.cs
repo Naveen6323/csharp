@@ -100,7 +100,6 @@ namespace practice_problems
             {
                 Console.WriteLine("1 Attendence\n2 DailyWage\n3 PartTimeWage\n4 wageForMonth \n5 WageForCondition\n6 exit");
                 int select = int.Parse(Console.ReadLine());
-
                 switch (select)
                 {
                     case 1:
@@ -117,8 +116,7 @@ namespace practice_problems
                         Console.WriteLine("wageForMonth : " + wageForMonth);
                         break;
                     case 5:
-                        Console.WriteLine("Wage for Condition ----> "+wageForCondition);
-                        
+                        Console.WriteLine("Wage for Condition : "+wageForCondition);
                         break;
                    case 6:
                         loop = false;
@@ -130,16 +128,96 @@ namespace practice_problems
                 }
             }
 
-
-
-
-
-
-
         }
+
+        public void ShowGrade(int n)
+        {
+            if(n>89) Console.WriteLine("A");
+            else if (n > 79 && n<90) Console.WriteLine("B");
+            else if (n > 69 && n<80) Console.WriteLine("C");
+            else if (n > 59 && n<70) Console.WriteLine("D");
+            else Console.WriteLine("F");
+        }
+
+        
+
+        public void TemperatureConverter()
+        {
+            Console.WriteLine("Temperature Converter");
+            Console.WriteLine("Select conversion type:");
+            Console.WriteLine("1. Celsius to Fahrenheit");
+            Console.WriteLine("2. Fahrenheit to Celsius");
+
+            string choice = Console.ReadLine();
+
+            double temperature;
+
+            switch (choice)
+            {
+                case "1":
+                    Console.Write("Enter temperature in Celsius: ");
+                    temperature = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine(temperature+"c is equal to "+((temperature*9/5)+32)+"f");
+                    break;
+
+                case "2":
+                    Console.Write("Enter temperature in Fahrenheit: ");
+                    temperature = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine(temperature+"F is equal to "+((temperature-32)*5/9 )+"C");
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid choice. Please select 1 or 2.");
+                    break;
+            }
+        }
+
+        public void TicketPrice()
+        {
+            int child = 60;
+            int adult = 100;
+            int senior = 80;
+            float matinee = 1.5f;
+            Console.Write("enter age : ");
+            int age = int.Parse(Console.ReadLine());
+            Console.Write("enter time in 24hr format : ");
+            int time = int.Parse(Console.ReadLine());
+            bool isMatinee = false;
+            if (time < 18) isMatinee = true;
+            if (age < 12)
+            {
+                if (isMatinee) Console.WriteLine("ticket price : " + child);
+                else Console.WriteLine("ticket price :" + matinee*child);
+            }
+            else if (age >= 12 && age < 65)
+            {
+                if (isMatinee) Console.WriteLine("ticket price : " +  adult);
+                else Console.WriteLine("ticket price :" + matinee*adult);
+            }
+            else
+            {
+                if (isMatinee) Console.WriteLine("ticket price : " + senior);
+                else Console.WriteLine("ticket price :" + matinee*senior);
+            }
+        }
+
+        public void Verify(string user,string password)
+        {
+            string user1 = "naveen";
+            string user1Pass = "naveen123";
+            if (user.Equals(user1))
+            {
+                //Console.WriteLine("password is correct");
+                if (password.Equals(user1Pass)) Console.WriteLine("login succesfull");
+                else Console.WriteLine("password is incorrect");
+            }
+            else Console.WriteLine("user not exist");
+        }
+
 
         static void Main(string[] args)
         {
+            Program p = new Program();
             Action<object> cw = Console.WriteLine;
             int x1 = 1;
             int y1 = 3;
@@ -160,7 +238,10 @@ namespace practice_problems
             //else if (x == -1) Console.WriteLine("line 2 is greater");
             //else Console.WriteLine("lines are equal");
 
-            Employee();
+            //p.ShowGrade(56);
+            //p.TemperatureConverter();
+            //p.TicketPrice();
+            //p.Verify("naven","naveen123");
 
 
 
