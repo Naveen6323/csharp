@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
-using OOPs;
+//using OOPs;
 namespace practice_problems
 {
     internal class Program
@@ -216,10 +218,9 @@ namespace practice_problems
             else Console.WriteLine("user not exist");
         }
 
-
         static void Main(string[] args)
         {
-            Program p = new Program();
+            //Program p = new Program();
             Action<object> cw = Console.WriteLine;
             int x1 = 1;
             int y1 = 3;
@@ -243,10 +244,268 @@ namespace practice_problems
             //p.TemperatureConverter();
             //p.TicketPrice();
             //p.Verify("naveen", "naveen3");
-            cw("hello");
+            //cw("hello");
+            //List<int> l = new List<int>();
+            //HashSet<int> h = new HashSet<int>();
+            //h.Add(1);
+            //l.Sort();
+            //Person p = new Person();
 
+            //p.SetAge(-1); ;
+            //cw(p.GetAge());
+            //Circle c = new Circle(5);
+            //c.GetArea();
+            //Square s = new Square(5);
+            //s.GetArea();
+            //Calculator cal  = new Calculator();
+            //cal.Add(1,3.4423422,2.23);
+            //CreditCardPayment c = new CreditCardPayment();
+            //c.ProcessPayment();
+            //CashPayment cp = new CashPayment();
+            //cp.ProcessPayment();
+            //PartTimeEmployee p = new PartTimeEmployee(1000);
+            //p.Calculate();
+            //FullTimeEmployee f = new FullTimeEmployee(1000);
+            //f.Calculate();
+            //Product p = new Product("apple", 30, 10);
+            //p.GetTotalValue();
+            Book b = new Book();
+            b.AddBook("oops");
+            b.AddBook("c#");
+            b.RemoveBook("java");
+            //b.GetAllBooks();
 
         }
         
+    }
+
+    class Rectangle
+    {
+        private int length;
+        private int breadth;
+        public void SetLength(int length)
+        {
+            this.length = length;
+        }
+        public void SetBreadth(int breadth)
+        {
+            this.breadth = breadth;
+        } 
+        public int GetArea()
+        {
+            return length * breadth;
+        }
+
+    }
+
+    class Person
+    {
+        private string name;
+        private int age;
+        public void SetName(string name)
+        {
+            this.name = name;
+        }
+        public void SetAge(int age)
+        {
+            if(age<0) Console.WriteLine("age cannot bo negative");
+            else this.age = age;
+        }
+        public string GetName()
+        {
+            return name;
+        }
+        public int GetAge()
+        {
+            return age;
+        }
+    }
+
+    class Shape
+    {
+        public void GetArea()
+        {
+            Console.WriteLine("Shape ");
+        }
+    }
+    class Circle : Shape
+    {
+        private int radius;
+        public Circle(int radius)
+        {
+            this.radius = radius;
+        }
+        public void GetArea()
+        {
+            Console.WriteLine("area of circle : " + Math.PI * radius * radius);
+        }
+    }
+    class Square : Shape
+    {
+        private int side;
+        public Square(int side)
+        {
+            this.side = side;
+        }
+        public void GetArea()
+        {
+            Console.WriteLine("area of square : " + side * side);
+        }
+    }
+
+    class Animal
+    {
+        public void MakeSound()
+        {
+            Console.WriteLine("animal sound");
+        }
+    }
+    class Dog : Animal
+    {
+        public void MakeSound()
+        {
+            Console.WriteLine("bark");
+        }
+    }
+    class Cat: Animal
+    {
+        public void MakeSound()
+        {
+            Console.WriteLine("meow");
+        }
+    }
+
+    class Calculator
+    {
+        public void Add(int a, int b)
+        {
+            Console.WriteLine(a + b);
+        }
+        public void Add(double a, double b, double c)
+        {
+            Console.WriteLine(a + b + c);
+        }   
+    }
+
+     class Payment
+    {
+        public void ProcessPayment()
+        {
+            Console.WriteLine("payment process");
+        }
+
+    }
+
+    class CreditCardPayment : Payment
+    {
+        public void ProcessPayment()
+        {
+            Console.WriteLine("credit card payment");
+        }
+    }
+    class CashPayment : Payment
+    {
+        public void ProcessPayment()
+        {
+            Console.WriteLine("cash payment");
+        }
+    }
+
+    abstract class Vehicle
+    {
+        public abstract void Start();
+    }
+    class Bike : Vehicle
+    {
+        public override void Start()
+        {
+            Console.WriteLine("bike start");
+        }
+    }
+    class Car : Vehicle
+    {
+        public override void Start()
+        {
+            Console.WriteLine("car start");
+        }
+    }
+
+    abstract class CalculateSalary
+    {
+        public abstract void Calculate();
+
+
+    }
+
+    class FullTimeEmployee : CalculateSalary
+    {
+        private int salary;
+        public FullTimeEmployee(int salary)
+        {
+            this.salary = salary;
+        }
+        override
+        public void Calculate()
+        {
+            Console.WriteLine("salary : " + salary);
+        }
+    }
+    class PartTimeEmployee : CalculateSalary
+    {
+        private int salary;
+        public PartTimeEmployee(int salary)
+        {
+            this.salary = salary;
+        }
+        override
+        public  void Calculate()
+        {
+            Console.WriteLine("salary : " + salary*0.5);
+        }
+    }
+
+    class Product
+    {
+        private string name;
+        private double price;
+        private int quantity;
+        public Product(string name, double price, int quantity)
+        {
+            this.name = name;
+            this.price = price;
+            this.quantity = quantity;
+        }
+        public void GetTotalValue()
+        {
+            Console.WriteLine($"total price of  {name} :" + price * quantity);
+        }
+    }
+    class Library
+    {
+        protected List<string> l = new List<string>();
+        
+        public void GetAllBooks()
+        {
+            Console.WriteLine("books : ");
+            foreach (var i in l)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+
+    class Book : Library
+    {
+        
+        public void AddBook(string book)
+        {
+            if(l.Contains(book)) Console.WriteLine("book already exist");
+            else l.Add(book);
+        }
+        public void RemoveBook(string book)
+        {
+            if (l.Contains(book)) l.Remove(book);
+            else Console.WriteLine($"{book} book not exist in library");
+        }
     }
 }
