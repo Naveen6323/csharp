@@ -249,9 +249,10 @@ namespace practice_problems
             //HashSet<int> h = new HashSet<int>();
             //h.Add(1);
             //l.Sort();
-            //Person p = new Person();
+            //Person p = new Person("naveen",423);
 
             //p.SetAge(-1); ;
+            //cw(p.GetName());
             //cw(p.GetAge());
             //Circle c = new Circle(5);
             //c.GetArea();
@@ -269,10 +270,10 @@ namespace practice_problems
             //f.Calculate();
             //Product p = new Product("apple", 30, 10);
             //p.GetTotalValue();
-            Book b = new Book();
-            b.AddBook("oops");
-            b.AddBook("c#");
-            b.RemoveBook("java");
+            //Book b = new Book();
+            //b.AddBook("oops");
+            //b.AddBook("c#");
+            //b.RemoveBook("java");
             //b.GetAllBooks();
 
         }
@@ -302,15 +303,17 @@ namespace practice_problems
     {
         private string name;
         private int age;
-        public void SetName(string name)
+        public Person(string name,int age)
         {
             this.name = name;
-        }
-        public void SetAge(int age)
-        {
-            if(age<0) Console.WriteLine("age cannot bo negative");
+            if(age<0) Console.WriteLine("age cannot be negative");
             else this.age = age;
         }
+        //public void SetAge(int age)
+        //{
+        //    if(age<0) Console.WriteLine("age cannot bo negative");
+        //    else this.age = age;
+        //}
         public string GetName()
         {
             return name;

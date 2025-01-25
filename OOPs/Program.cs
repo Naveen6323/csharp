@@ -19,8 +19,7 @@ namespace OOPs
             //Console.WriteLine(b.GetAccountNumber());
             //Console.WriteLine(b.GetBalance());
             //Console.WriteLine("oops");
-            //Cat c = new Cat();
-            //c.Type();
+
             //HRManager hr = new HRManager();
             //hr.Work();
             //hr.addEmployee();
@@ -46,9 +45,9 @@ namespace OOPs
             //c.CalculateArea();
             //c.CalculatePerimeter();
             //c.Display();
-            Car c = new Car(12, 2);
-            Console.WriteLine(c.GetSpeed());
-            c.SpeedUp();
-        }
+        //    Car c = new Car(12, 2);
+        //    Console.WriteLine(c.GetSpeed());
+        //    c.SpeedUp();
+        //}
     }
 }
