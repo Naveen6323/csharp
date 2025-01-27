@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using practice_problems;
 
 namespace OOPs
 {
@@ -45,9 +46,22 @@ namespace OOPs
             //c.CalculateArea();
             //c.CalculatePerimeter();
             //c.Display();
-        //    Car c = new Car(12, 2);
-        //    Console.WriteLine(c.GetSpeed());
-        //    c.SpeedUp();
-        //}
+            //    Car c = new Car(12, 2);
+            //    Console.WriteLine(c.GetSpeed());
+            //    c.SpeedUp();
+
+            Modif m = new Modif();
+            //m.a();
+            
+            Console.WriteLine("child class in diff project----------");
+            DiffProj dp = new DiffProj();
+            //dp.a();
+            
+        }
+    }
+
+    class DiffProj : Modif
+    {
+
     }
 }

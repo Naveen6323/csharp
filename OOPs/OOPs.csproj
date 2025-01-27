@@ -53,5 +53,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\practice problems\practice problems.csproj">
+      <Project>{a9aa1993-4bd8-4cd6-b5d1-4910a9f20bfe}</Project>
+      <Name>practice problems</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
