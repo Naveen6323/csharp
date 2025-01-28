@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "practice problems", "practi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPs", "OOPs\OOPs.csproj", "{3F7BCD54-C966-404B-88B6-C6E68C2E310C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections", "Collections\Collections.csproj", "{D1964E3D-C274-4D1F-92DD-765A4E2044CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3F7BCD54-C966-404B-88B6-C6E68C2E310C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F7BCD54-C966-404B-88B6-C6E68C2E310C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F7BCD54-C966-404B-88B6-C6E68C2E310C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1964E3D-C274-4D1F-92DD-765A4E2044CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1964E3D-C274-4D1F-92DD-765A4E2044CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1964E3D-C274-4D1F-92DD-765A4E2044CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1964E3D-C274-4D1F-92DD-765A4E2044CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

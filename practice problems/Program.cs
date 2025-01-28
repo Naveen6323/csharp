@@ -13,7 +13,7 @@ namespace practice_problems
     internal class Program
     {
 
-            //public int add(int n, int m)
+        //public int add(int n, int m)
         //{
         //    return n+m;
 
@@ -143,7 +143,7 @@ namespace practice_problems
         //    else Console.WriteLine("F");
         //}
 
-        
+
 
         //public void TemperatureConverter()
         //{
@@ -219,9 +219,9 @@ namespace practice_problems
         //}
         
 
-
         static void Main(string[] args)
         {
+           
             Review_1.SwapNums(3,7);
             //Review_1.Conversion();
             //Review_1.FibonacciSeries(7);
@@ -234,11 +234,12 @@ namespace practice_problems
             //Triangle t = new Triangle(2, 3);
             //t.CalculateArea();
 
-            Console.WriteLine("child class with same project--------");
-            Program p = new Program();
-            Console.WriteLine(" non child class in same project----------");
-            SecondChild sc = new SecondChild();
-            sc.a(); sc.c(); sc.e();
+            //Console.WriteLine("child class with same project--------");
+            //Program p = new Program();
+            //Console.WriteLine(" non child class in same project----------");
+            //SecondChild sc = new SecondChild();
+            //sc.a(); sc.c(); sc.e();
+
 
 
 
@@ -299,9 +300,10 @@ namespace practice_problems
             //b.AddBook("c#");
             //b.RemoveBook("java");
             //b.GetAllBooks();
-           
-            
-            
+            string s = "nalkdjf";
+            cw(" : "+s.IndexOf(s.Substring(0, 2)));
+
+
 
 
 
