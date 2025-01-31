@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,15 +37,21 @@ namespace Collections
             //stack.st.Push(3);
             //stack.PushAtbottom(4);
             //stack.print(stack.st);
-            //Console.WriteLine(fact(4));
-            int[] arr = { 6, 8, 2, 1, 3 };
-            Console.WriteLine();
-            arr.Contains(1);
-            int s = 30;
-            string p = Convert.ToString(s,2);
-            //byte a = (Convert.ToByte(p));
-            List<int> l = new List<int>();
-            l.ToArray();
+            //Console.WriteLine(fact
+            
+            //Console.WriteLine();
+            //arr.Contains(1);
+            //int s = 30;
+            //string p = Convert.ToString(s,2);
+            ////byte a = (Convert.ToByte(p));
+            //List<int> l = new List<int>();
+            //l.ToArray();
+            //int a = 1;
+            //Generics.Compare('c','a','g');
+
+            //string p =
+            //Generics.Swap(20,11);
+
             //char[] ch = p.ToCharArray();
             //Console.WriteLine(string.Join(",",ch));
             //char c = '3';
