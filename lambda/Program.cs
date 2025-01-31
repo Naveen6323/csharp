@@ -18,9 +18,16 @@ namespace lambda
             this.age = age;
             this.id= id;
         }
+
+        public void ToString()
+        {
+            Console.WriteLine($"[id = {id}, name = {name}, age={age}]");
+        }
+
     }
     internal class Program
     {
+        
         static void Main(string[] args)
         {
             List<int> numbers = new List<int> { 1, 8, 56, 8, 9, 2, 1, 5 };
@@ -64,8 +71,8 @@ namespace lambda
 
             //emp = emp.FindAll(x => x.name != "naveen");
             emp.RemoveAll(x => x.name == "naveen");
-            emp.ForEach(n=>{ Console.WriteLine($"id={n.id},name={n.name},age={n.age}"); });
-
+            //emp.ForEach(n=>{ Console.WriteLine($"id={n.id},name={n.name},age={n.age}"); });
+            emp.ForEach(h=>h.ToString());
         }
     }
 }
