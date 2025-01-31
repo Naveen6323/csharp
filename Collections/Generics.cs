@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data.SqlTypes;
 namespace Collections
 {
@@ -24,5 +26,14 @@ namespace Collections
 
 
         }
+
+        public Hashtable ht = new Hashtable();
+        public Dictionary<string, int> d = new Dictionary<string, int>();
+
+       
+
+
     }
+
+    
 }
