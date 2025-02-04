@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,20 +15,64 @@ namespace lambda
         public int id { get; set; }
         public string name { get; set; }
         public int age { get; set; }
+        public int salary { get; set; }
+        public string department { get; set; }
 
-        public Employee(int id, string name, int age)
+        public Employee(int id, string name, int age,int salary, string department)
         {
-            this.name= name;
+            this.name = name;
             this.age = age;
-            this.id= id;
+            this.id = id;
+            this.salary = salary;
+            this.department = department;
         }
-        public void ToString()
+        public override string ToString()
         {
-            Console.WriteLine($"[id = {id}, name = {name}, age={age}]");
+            return $"[id = {id}, name = {name}, age={age},salary = {salary}]";
         }
 
     }
 
+    class Student
+    {
+        public string name { get; set; }
+        public int math { get; set; }
+        public int english { get; set; }
+        public int science { get; set; }
+
+        public Student(string name, int math, int english, int science)
+        {
+            this.name = name;
+            this.math = math;
+            this.english = english;
+            this.science = science;
+
+        }
+
+        public override string ToString()
+        {
+            return $"[name = {name}, Math = {math}, eng = {english}, sci = {science}";
+        }
+    }
+    class Product
+    {
+        public string Name { get; set; }
+        public double Price { get; set; }
+        public int Stock { get; set; }
+        public DateTime Data { get; set; }
+        public Product(string name, double price, int stock, DateTime data)
+        {
+            Name = name;
+            Price = price;
+            Stock = stock;
+            Data = data;
+        }
+
+        public override string ToString()
+        {
+            return $"Product: {Name}, Price: {Price:C}, Stock: {Stock}";
+        }
+    }
     public class Names
     {
         public string name { get; set; }
@@ -87,7 +135,7 @@ namespace lambda
 
             int[] arr = { 2, 35, 1, 6, 7, 41, 3 };
             double[] d = { 1.2, 4.3, 3.2 };
-            string[] str = { "naveen", "vishal", "vaibhav" };
+            string[] str = { "naveen","fb.com", "vishal", "vaibhav","Abhi","googel.com" };
             char[] ch = { 'a', 'b', 'e', 'c' };
             MaxinArray.MaxInArray(arr);
             
@@ -100,13 +148,23 @@ namespace lambda
 
             List<Employee> emp = new List<Employee>()
             {
-                new Employee(1,"naveen",22),
-                new Employee(2,"vishal",18),
-                new Employee(3,"vaibhav",23),
-                new Employee(4,"pranshu",17)
+                new Employee(1,"naveen",22,47000,"IT"),
+                new Employee(2,"vishal",18,50000, "IT"),
+                new Employee(3,"vaibhav",23,65000, "Electronics"),
+                new Employee(6,"sam",44,35000, "Sales")
             };
-            emp.Add(new Employee(5, "sam", 45));
-
+            emp.Add(new Employee(5, "sam", 45,56000, "Sales"));
+            List<Student> st = new List<Student>()
+            {
+                new Student("naveen",87,22,65),
+                new Student("vishal", 75, 60, 65)
+            };
+            List<Product> product = new List<Product>()
+            {
+                new Product("Laptop", 999.99, 10,new DateTime(2024,2,1)),
+                new Product("Smartphone", 499.99, 0,new DateTime(2025,1,1)),
+                new Product("Tablet", 299.99, 0,new DateTime(2025,1,23))
+            };
             emp.ForEach(n =>
             {
                 Console.WriteLine($"id={n.id},name={n.name},age={n.age}");
@@ -125,9 +183,84 @@ namespace lambda
             var sortedEmployeeByAge = emp.OrderBy(x => x.age);
             var reversSortedEmployeeByName = emp.OrderByDescending(x => x.name);
 
-            List<int> numbers = new List<int> { 1, 8, 56, 8, 9, 2, 1, 5 };
+            List<int> numbers = new List<int> { 8, 56, 8, 9,15,30, 2, 1,1, 5,-4 };
+            List<int> numbers2 = new List<int> { 3,5,2,6,56,4,1,9};
+
             List<int> evennums = numbers.FindAll(n => n % 2 == 0);
             List<int> oddnums = numbers.FindAll(n => n % 2 == 1);
+
+
+            // problems on Lambda----------------------------------------------
+            var even = from n in numbers where n % 2 == 0 select n;
+            var stringStartWithA = from n in str where n[0] == 'A' select n;
+            var desc = numbers.OrderByDescending(n => n);
+            var check = from n in numbers select n > 50;
+            int stringGreaterThan5 = str.Count(n => n.Length > 5);
+            var distinct = numbers.Distinct();
+            int sum = numbers.Where(n => n % 2 == 1).Sum();
+            int max = numbers.Max();
+            var listOfSquares = from n in numbers select n * n;
+            var endingWithDotCom = from n in str where n.EndsWith(".com") select n;
+            var grroupByFirstLetter = str.GroupBy(n => n[0]);
+            //foreach (var group in grroupByFirstLetter)
+            //{
+            //    Console.WriteLine($"Grade: {group.Key}");
+            //    foreach (var student in group)
+            //    {
+            //        Console.WriteLine($" - {student}");
+            //    }
+            //}
+            var top3 = numbers.OrderByDescending(n => n).Take(3);
+            var salaryGreaterThanFiftyThousand = from n in emp where n.salary > 50000 select n;
+            //foreach (var VARIABLE in salaryGreaterThanFiftyThousand)
+            //{
+            //    Console.WriteLine(VARIABLE.ToString());
+            //}
+            var checkAllPositive =numbers.All(n=>n>0);
+            var firstNumberDivisibleBy3And5 = numbers.Where(n => n % 3 == 0 && n % 5 == 0).Take(1);
+            var studentWithMarksGreaterThan80 =
+                from s in st where s.english > 80 || s.math > 80 || s.science > 80 select s;
+            //foreach (var VARIABLE in studentWithMarksGreaterThan80)
+            //{
+            //    Console.WriteLine(VARIABLE.ToString());
+            //}
+            var longestString = str.OrderByDescending(n => n.Length).Take(1);
+            var outOfStockProducts = from p in product where p.Stock==0 select p;
+            var averageOFNumbers = numbers.Average();
+            var secondHighest = numbers.OrderByDescending(n => n).Skip(1).First();
+            List<List<int>> nlist = new List<List<int>>()
+            {
+                new List<int>() { 1, 2, 3 },
+                new List<int>() { 4, 5, 6 }
+            };
+            var flattenList = nlist.SelectMany(n => n).ToList();
+            var commonnums = from a in numbers from b in numbers2 where a == b select a;
+            var averageSalaryOfEachDepartment = from n in emp
+                group n by n.department into e
+                select new { department = e.Key, averageSalary = e.Average(g => g.salary) };
+            //foreach (var VARIABLE in averageSalaryOfEachDepartment)
+            //{
+            //    Console.WriteLine($"department = {VARIABLE.department} , salary = {VARIABLE.averageSalary}");
+            //}
+            DateTime currdate = DateTime.Now;
+            DateTime pdo = new DateTime(2024, 4, 3);
+            var productsLastPurchased = from p in product
+                where (currdate - p.Data).TotalDays <= 30 select p;
+            foreach (var p in productsLastPurchased)
+            {
+                Console.WriteLine(p);
+            }
+
+            var youngestEmployee = from e in emp
+                group e by e.department
+                into x
+                select x.OrderBy(e => e.age).FirstOrDefault();
+            foreach (var VARIABLE in youngestEmployee)
+            {
+                Console.WriteLine(VARIABLE);
+            }
+            //Console.WriteLine(string.Join(",", youngestEmployee));
+
 
             //foreach (var employee in reversSortedEmployeeByName)
             //{
