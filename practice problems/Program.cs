@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 //using OOPs;
 namespace practice_problems
 {
+    
     internal class Program
     {
 

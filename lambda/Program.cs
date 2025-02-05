@@ -137,7 +137,7 @@ namespace lambda
             double[] d = { 1.2, 4.3, 3.2 };
             string[] str = { "naveen","fb.com", "vishal", "vaibhav","Abhi","googel.com" };
             char[] ch = { 'a', 'b', 'e', 'c' };
-            MaxinArray.MaxInArray(arr);
+            //MaxinArray.MaxInArray(arr);
             
             Names[] names = new Names[3];
             names[0] = new Names("naveen");
@@ -165,20 +165,20 @@ namespace lambda
                 new Product("Smartphone", 499.99, 0,new DateTime(2025,1,1)),
                 new Product("Tablet", 299.99, 0,new DateTime(2025,1,23))
             };
-            emp.ForEach(n =>
-            {
-                Console.WriteLine($"id={n.id},name={n.name},age={n.age}");
-            });
+            //emp.ForEach(n =>
+            //{
+            //    Console.WriteLine($"id={n.id},name={n.name},age={n.age}");
+            //});
             emp.RemoveAll(x => x.name == "vishal");
-            emp.ForEach(x =>
-            {
-                if (x.name == "pranshu")
-                {
-                    Console.WriteLine("searched employee is");
-                    Console.WriteLine($"id={x.id}, name={x.name},age={x.age}");
+            //emp.ForEach(x =>
+            //{
+            //    if (x.name == "pranshu")
+            //    {
+            //        Console.WriteLine("searched employee is");
+            //        Console.WriteLine($"id={x.id}, name={x.name},age={x.age}");
 
-                }
-            });
+            //    }
+            //});
             var sortedEmployeeByName = emp.OrderBy(x => x.name);
             var sortedEmployeeByAge = emp.OrderBy(x => x.age);
             var reversSortedEmployeeByName = emp.OrderByDescending(x => x.name);
@@ -238,6 +238,9 @@ namespace lambda
             var averageSalaryOfEachDepartment = from n in emp
                 group n by n.department into e
                 select new { department = e.Key, averageSalary = e.Average(g => g.salary) };
+            var average = emp.GroupBy(e => e.department)
+                .Select(e => new { depart = e.Key, average = e.Average(s => s.salary) });
+
             //foreach (var VARIABLE in averageSalaryOfEachDepartment)
             //{
             //    Console.WriteLine($"department = {VARIABLE.department} , salary = {VARIABLE.averageSalary}");
@@ -246,27 +249,30 @@ namespace lambda
             DateTime pdo = new DateTime(2024, 4, 3);
             var productsLastPurchased = from p in product
                 where (currdate - p.Data).TotalDays <= 30 select p;
-            foreach (var p in productsLastPurchased)
-            {
-                Console.WriteLine(p);
-            }
+            //foreach (var p in productsLastPurchased)
+            //{
+            //    Console.WriteLine(p);
+            //}
 
             var youngestEmployee = from e in emp
                 group e by e.department
                 into x
                 select x.OrderBy(e => e.age).FirstOrDefault();
-            foreach (var VARIABLE in youngestEmployee)
-            {
-                Console.WriteLine(VARIABLE);
-            }
-            //Console.WriteLine(string.Join(",", youngestEmployee));
-
-
-            //foreach (var employee in reversSortedEmployeeByName)
+            //foreach (var VARIABLE in youngestEmployee)
             //{
-            //    employee.ToString();
+            //    Console.WriteLine(VARIABLE);
             //}
 
+            ExceptionHandling.Divide();
+            //try
+            //{
+            //    ExceptionHandling.PrintAge(-1);
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e.Message);
+                
+            //}  
 
 
 

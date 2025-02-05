@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LINQ.cs" />
+    <Compile Include="Exception handling.cs" />
     <Compile Include="MaxinArray.cs" />
     <Compile Include="polymorphism.cs" />
     <Compile Include="Program.cs" />
