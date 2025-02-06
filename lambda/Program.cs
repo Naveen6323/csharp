@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Security.AccessControl;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace lambda
@@ -233,7 +235,17 @@ namespace lambda
                 new List<int>() { 1, 2, 3 },
                 new List<int>() { 4, 5, 6 }
             };
-            var flattenList = nlist.SelectMany(n => n).ToList();
+            string sequence = " dog is not a cat and a cat is cat";
+            var words = sequence.Split(' ');
+
+            Console.WriteLine("----------------------------");
+            var groups = from a in words group a by a into g orderby g.Count() select g;
+
+            foreach (var se in groups)
+            {
+                Console.WriteLine(se);
+            }
+            var flattenList = nlist.SelectMany(n => n);
             var commonnums = from a in numbers from b in numbers2 where a == b select a;
             var averageSalaryOfEachDepartment = from n in emp
                 group n by n.department into e
