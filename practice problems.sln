@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicProgrammsForTesting", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestingForBasicProgramms", "NUnitTestingForBasicProgramms\NUnitTestingForBasicProgramms.csproj", "{04C0855A-5DF2-4443-BB96-2D0FB7770A96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSTestingForBasicPrograms", "MSTestingForBasicPrograms\MSTestingForBasicPrograms.csproj", "{0579879E-5C8C-475F-96ED-C83767355D17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{04C0855A-5DF2-4443-BB96-2D0FB7770A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04C0855A-5DF2-4443-BB96-2D0FB7770A96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04C0855A-5DF2-4443-BB96-2D0FB7770A96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0579879E-5C8C-475F-96ED-C83767355D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0579879E-5C8C-475F-96ED-C83767355D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0579879E-5C8C-475F-96ED-C83767355D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0579879E-5C8C-475F-96ED-C83767355D17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

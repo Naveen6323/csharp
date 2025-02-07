@@ -6,10 +6,10 @@ namespace NUnitTestingForBasicProgramms
     {
         private BasicProgram program;
 
-        [SetUp] 
+        [SetUp]
         public void Setup()
         {
-            program=new BasicProgram();
+            program = new BasicProgram();
         }
 
         [Test]
@@ -47,11 +47,11 @@ namespace NUnitTestingForBasicProgramms
         [Test]
         public void BubbbleSort()
         {
-            List<int> a = new List<int>() { 4,3,2,1 };
-            List<int> expected = new List<int>() { 1,2,3,4};
+            List<int> a = new List<int>() { 4, 3, 2, 1 };
+            List<int> expected = new List<int>() { 1, 2, 3, 4 };
             List<int> actual = program.BubbleSortAscendingOrder(a);
             Assert.AreEqual(expected, actual);
         }
     }
-    
+
 }
