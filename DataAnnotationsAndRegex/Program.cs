@@ -53,9 +53,8 @@ namespace DataAnnotationsAndRegex
             //Match m = regex.Match(str);
             //if(m.Success) Console.WriteLine(m);
             //else Console.WriteLine("nulll");
-            int[] nums = { 1, 2, 3 };
-            int[] d = nums.Distinct().ToArray();
-            Dictionary<int, int> dx = new Dictionary<int, int>();
+            
+
         }
     }
 

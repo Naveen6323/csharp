@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lambda", "lambda\lambda.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAnnotationsAndRegex", "DataAnnotationsAndRegex\DataAnnotationsAndRegex.csproj", "{3E58B9C6-8C30-4A5B-8270-5CFD2A0E6C0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicProgrammsForTesting", "BasicProgrammsForTesting\BasicProgrammsForTesting.csproj", "{C879437E-CF13-4283-8173-D3F553831D8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestingForBasicProgramms", "NUnitTestingForBasicProgramms\NUnitTestingForBasicProgramms.csproj", "{04C0855A-5DF2-4443-BB96-2D0FB7770A96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{3E58B9C6-8C30-4A5B-8270-5CFD2A0E6C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E58B9C6-8C30-4A5B-8270-5CFD2A0E6C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E58B9C6-8C30-4A5B-8270-5CFD2A0E6C0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C879437E-CF13-4283-8173-D3F553831D8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C879437E-CF13-4283-8173-D3F553831D8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C879437E-CF13-4283-8173-D3F553831D8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C879437E-CF13-4283-8173-D3F553831D8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04C0855A-5DF2-4443-BB96-2D0FB7770A96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04C0855A-5DF2-4443-BB96-2D0FB7770A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04C0855A-5DF2-4443-BB96-2D0FB7770A96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04C0855A-5DF2-4443-BB96-2D0FB7770A96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
