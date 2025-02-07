@@ -149,5 +149,29 @@ namespace DataAnnotationsAndRegex
         public string pass { get;  set; }
     }
 
-    
+    class CreditCardNumber
+    {
+        [RegularExpression(@"^[0-9]{4}-*[0-9]{4}-*[0-9]{4}-*[0-9]{4}$")]
+        public string num { get;  set; }
+    }
+
+    class DomainNameFetcher
+    {
+        [RegularExpression(@"[^www.][a-z]+(\.[a-z]+)+")]
+        public string domainName { get; set; }
+    }
+
+    class HtmlTagsRemover
+    {
+        [RegularExpression(@"[a-z]+[a-zA-Z0-9\s]+")]
+        public string content { get;  set; }
+    }
+
+    class VehicleRegistrationNumbers
+    {
+        [RegularExpression(@"/[A-Z]+-[0-9]{2}-[A-Z]+-[0-9]{4}")]
+        public string I { get; set; }
+    }
+
+
 }
