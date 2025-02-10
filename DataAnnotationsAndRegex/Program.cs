@@ -12,40 +12,40 @@ namespace DataAnnotationsAndRegex
         static void Main(string[] args)
         {
             //Console.WriteLine("enter details");
-            Console.WriteLine("entern your email");
-            string name = Console.ReadLine();
-            //Console.WriteLine("enter num:");
-            //int num = int.Parse(Console.ReadLine());
-            //Console.WriteLine("enter size:");
+            //Console.WriteLine("entern your email");
+            //string name = Console.ReadLine();
+            ////Console.WriteLine("enter num:");
+            ////int num = int.Parse(Console.ReadLine());
+            ////Console.WriteLine("enter size:");
 
 
-            //Console.WriteLine("enter phone : ");
-            //string Phone = Console.ReadLine();
+            ////Console.WriteLine("enter phone : ");
+            ////string Phone = Console.ReadLine();
 
-            EmailValidate p = new EmailValidate()
-            {
-                mail = name
+            //EmailValidate p = new EmailValidate()
+            //{
+            //    mail = name
 
-            };
-            //string dates = "Here are some dates:12/05/2021, 01-25-2020, and also 3/03/2022 (not valid) Important: 15/04/2023 and 11-12-2025 ";
+            //};
+            ////string dates = "Here are some dates:12/05/2021, 01-25-2020, and also 3/03/2022 (not valid) Important: 15/04/2023 and 11-12-2025 ";
 
-            //MatchDates.matchDates(dates);
+            ////MatchDates.matchDates(dates);
 
-            var context = new ValidationContext(p);
-            var results = new List<ValidationResult>();
-            bool isValid = Validator.TryValidateObject(p, context, results, true);
-            if (isValid)
-            {
-                Console.WriteLine("emp  details are correct");
-            }
-            else
-            {
-                Console.WriteLine("validation errors");
-                foreach (var VARIABLE in results)
-                {
-                    Console.WriteLine($"->{VARIABLE.ErrorMessage}");
-                }
-            }
+            //var context = new ValidationContext(p);
+            //var results = new List<ValidationResult>();
+            //bool isValid = Validator.TryValidateObject(p, context, results, true);
+            //if (isValid)
+            //{
+            //    Console.WriteLine("emp  details are correct");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("validation errors");
+            //    foreach (var VARIABLE in results)
+            //    {
+            //        Console.WriteLine($"->{VARIABLE.ErrorMessage}");
+            //    }
+            //}
 
             //string reg = @"[a-z\s]+[a-z\W]+";
             //Regex regex = new Regex(reg);
@@ -53,7 +53,14 @@ namespace DataAnnotationsAndRegex
             //Match m = regex.Match(str);
             //if(m.Success) Console.WriteLine(m);
             //else Console.WriteLine("nulll");
+            List<int> a = new List<int>();
+            a.Add(1);
+            a[1] = 2;
+            Console.WriteLine(a.IndexOf(2));
+            Dictionary<int, int> d = new Dictionary<int, int>();
+            HashSet<int> t = new HashSet<int>();
             
+
 
         }
     }

@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BasicProgrammsForTesting\BasicProgrammsForTesting.csproj" />
+    <ProjectReference Include="..\OnlyForReview\OnlyForReview.csproj" />
   </ItemGroup>
 
   <ItemGroup>
