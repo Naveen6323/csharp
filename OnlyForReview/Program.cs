@@ -17,17 +17,13 @@ namespace OnlyForReview
             //Bank.AddBalance(200);
             //Bank.WithDraw();
             //Stock.GetStock();
-            NumberChecker.StringEqual("ab","ab");
+            //NumberChecker.StringEqual("ab","ab");
             //StringEqual.IsEqual("dsaj","dbk");
-            List<int> a = new List<int>(){1, 2, 3, 11, 22 };
+            //List<int> a = new List<int>(){1, 2, 3, 11, 22 };
             //NumberTransFormation.GreatThan10(a);
             //NumberTransFormation.MulByTwo(a);
             //NumberTransFormation.Max(a);
-            Stack<char> st = new Stack<char>();
-            StringBuilder sb = new StringBuilder();
-            st.Push('a');
-            st.Push('b');
-                
+
 
         }
     }

@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSTestingForBasicPrograms",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlyForReview", "OnlyForReview\OnlyForReview.csproj", "{28765816-E8B9-4697-A554-1088EA8775E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHandling", "FileHandling\FileHandling.csproj", "{9250CEB9-9FE3-4E72-A60A-3C958DF481E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{28765816-E8B9-4697-A554-1088EA8775E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28765816-E8B9-4697-A554-1088EA8775E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28765816-E8B9-4697-A554-1088EA8775E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9250CEB9-9FE3-4E72-A60A-3C958DF481E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9250CEB9-9FE3-4E72-A60A-3C958DF481E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9250CEB9-9FE3-4E72-A60A-3C958DF481E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9250CEB9-9FE3-4E72-A60A-3C958DF481E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
