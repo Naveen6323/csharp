@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlyForReview", "OnlyForRev
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHandling", "FileHandling\FileHandling.csproj", "{9250CEB9-9FE3-4E72-A60A-3C958DF481E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates", "Delegates\Delegates.csproj", "{1C0547BA-C328-4860-ADAD-DC1D5B078CE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events", "Events\Events.csproj", "{A43B5BD3-C1EF-4B7A-A37B-0F3D78F70F52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{9250CEB9-9FE3-4E72-A60A-3C958DF481E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9250CEB9-9FE3-4E72-A60A-3C958DF481E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9250CEB9-9FE3-4E72-A60A-3C958DF481E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C0547BA-C328-4860-ADAD-DC1D5B078CE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C0547BA-C328-4860-ADAD-DC1D5B078CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C0547BA-C328-4860-ADAD-DC1D5B078CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C0547BA-C328-4860-ADAD-DC1D5B078CE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43B5BD3-C1EF-4B7A-A37B-0F3D78F70F52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43B5BD3-C1EF-4B7A-A37B-0F3D78F70F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43B5BD3-C1EF-4B7A-A37B-0F3D78F70F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43B5BD3-C1EF-4B7A-A37B-0F3D78F70F52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

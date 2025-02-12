@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections;
+using System.Globalization;
 using System.Text;
 using System.Text.Json.Nodes;
 using CsvHelper;
@@ -167,7 +168,7 @@ namespace FileHandling
             File.WriteAllText(path,json);
         }
 
-        public static IEnumerable<Person> ReadJsonData(string path)
+        public static IEnumerable<Person>        ReadJsonData(string path)
         {
             string jsonData = File.ReadAllText(path);
             var deserializeData = JsonConvert.DeserializeObject<List<Person>>(jsonData);
@@ -184,6 +185,7 @@ namespace FileHandling
             var updatedData = ReadJsonData(path).Where(x => x.ID != id).ToList();
             AddJsonData(path,updatedData);
         }
+        
         
 
 
