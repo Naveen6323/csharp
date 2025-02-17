@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates", "Delegates\Dele
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events", "Events\Events.csproj", "{A43B5BD3-C1EF-4B7A-A37B-0F3D78F70F52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBManagement", "DBManagement\DBManagement.csproj", "{BBB25411-AA06-406F-9400-A65A03A97533}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,8 +83,15 @@ Global
 		{A43B5BD3-C1EF-4B7A-A37B-0F3D78F70F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A43B5BD3-C1EF-4B7A-A37B-0F3D78F70F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A43B5BD3-C1EF-4B7A-A37B-0F3D78F70F52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBB25411-AA06-406F-9400-A65A03A97533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB25411-AA06-406F-9400-A65A03A97533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB25411-AA06-406F-9400-A65A03A97533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB25411-AA06-406F-9400-A65A03A97533}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {583B8700-ACDC-4FE9-A7C6-6E1F0C6872D9}
 	EndGlobalSection
 EndGlobal
