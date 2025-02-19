@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Data.SqlClient;
 
 namespace DBManagement
@@ -9,14 +10,14 @@ namespace DBManagement
         {
             DataManipulationCommands conn = new DataManipulationCommands();
             //connection.InsertData("sam", "sam@gmail.com", 23);
-            conn.InsertData("adi", "mail.com", 34);
+            //conn.InsertData("adi", "mail.com", 34);
             //Console.WriteLine(conn.IDExist(3));
             //conn.DeleteData(3);
             //conn.GetLastid();
-            conn.GetAllData();
-
-
-
+            //conn.GetAllData();
+            //conn.UpdateData();
         }
     }
+    
+    
 }

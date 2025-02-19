@@ -20,11 +20,11 @@ namespace DBManagement
         [Range(18, 100, ErrorMessage = "age shoule be more than 17")]
         public int age { get; set; }
         [Required(ErrorMessage = "email is required")]
-        [RegularExpression(@"^[a-zA-Z0-9.]+@gmail.com$", ErrorMessage = "provide valid gmail address like xxxx@gmail.com or xxxx.xxx@gmail.com")]
+        [RegularExpression(@"^[a-z0-9.]+@[a-z]+.com$", ErrorMessage = "provide valid gmail address like xxxx@gmail.com or xxxx.xxx@gmail.com")]
         public string email { get; set; }
         
         public abstract void InsertData(string name,string email,int age);
-        public abstract void UpdateData(int id,string name,string email,int age);
+        //public abstract void UpdateData(int id,string name,string email,int age);
         public abstract void DeleteData(int id);
         public string ToString(int id,string name,string email,int age)
         {
@@ -112,7 +112,119 @@ namespace DBManagement
             SqlCommand cmd = new SqlCommand(reset, obj.con);
             cmd.ExecuteNonQuery();
         }
-        public override void UpdateData(int id, string name, string email, int age)
+        //public override void UpdateData(int id, string name, string email, int age)
+        //{
+        //    //int count; 
+        //    DataManipulationCommands obj = new DataManipulationCommands();
+        //    if (IDExist(id))
+        //    {
+        //        try
+        //        {
+        //            obj.con.Open();
+        //            string updateQuery = $"update users set username='{name}',email='{email}',age={age} where id={id}";
+        //            SqlCommand cmd = new SqlCommand(updateQuery, obj.con);
+        //            cmd.ExecuteNonQuery();
+        //            Console.WriteLine("Data updated successfully");
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            Console.WriteLine("Error: " + e.Message);
+        //        }
+        //        finally
+        //        {
+        //            obj.con.Close();
+        //            Console.WriteLine("connection closed");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("id does not exist");
+        //    }
+            
+        //}
+        public void UpdateData()
+        {
+            string ans;
+            DataManipulationCommands obj = new DataManipulationCommands();
+
+            do
+            {
+                Console.WriteLine("1 : get all data\n2 : update name\n3 : update email\n4 : update age");
+                int select;
+                while(true)
+                {
+                    Console.WriteLine("enter number");
+                    select = int.Parse(Console.ReadLine());
+                    if (select == 1 || select == 2 || select == 3 || select == 4)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("enter valid number");
+                    }
+                }
+                //Console.WriteLine("enter number");
+                //select = int.Parse(Console.ReadLine());
+                switch (select)
+                {
+                    case 1: GetAllData();
+                        break;
+                    case 2:
+                        {
+                            Console.WriteLine("enter id");
+                            int id = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter new name");
+                            string newname = Console.ReadLine();
+                            var context = new ValidationContext(obj) { MemberName="name"};
+                            var results = new List<ValidationResult>();
+                            bool isValid = Validator.TryValidateProperty(newname, context, results);
+                            if (isValid == true)
+                            {
+                                UpdateName(id, newname);
+                            }
+                            else Console.WriteLine("details are not valid");
+                        }
+                        break;
+                    case 3:
+                        {
+                            Console.WriteLine("enter id");
+                            id = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter new email");
+                            string newemail = Console.ReadLine();
+                            var context = new ValidationContext(obj) { MemberName="email"};
+                            var results = new List<ValidationResult>();
+                            bool isValid = Validator.TryValidateProperty(newemail, context, results);
+                            if (isValid == true)
+                            {
+                                UpdateEmail(id, newemail);
+                            }
+                            else Console.WriteLine("details are not valid");
+                        }
+                        break;
+                    case 4:
+                        {
+                            Console.WriteLine("enter id");
+                            int  id = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter new age");
+                            string newAge = Console.ReadLine();
+                            var context = new ValidationContext(obj) { MemberName="age"};
+                            var results = new List<ValidationResult>();
+                            bool isValid = Validator.TryValidateProperty(int.Parse(newAge), context, results);
+                            if (isValid == true)
+                            {     
+                                UpdateAge(id, newAge);
+                            }
+                            else Console.WriteLine("details are not valid");
+
+                        }
+                        break;
+                }
+                Console.WriteLine("Do you want to continue? Y/N");
+                ans = Console.ReadLine();
+            } while (ans != "N");
+        }
+        public void UpdateName(int id, string newName)
         {
             //int count; 
             DataManipulationCommands obj = new DataManipulationCommands();
@@ -121,10 +233,11 @@ namespace DBManagement
                 try
                 {
                     obj.con.Open();
-                    string updateQuery = $"update users set username='{name}',email='{email}',age={age} where id={id}";
+                    string updateQuery = $"update users set username='{newName}' where id={id}";
                     SqlCommand cmd = new SqlCommand(updateQuery, obj.con);
-                    cmd.ExecuteNonQuery();
-                    Console.WriteLine("Data updated successfully");
+                    int r = cmd.ExecuteNonQuery();
+                    if (r > 0) Console.WriteLine("Data updated successfully");
+                    else Console.WriteLine("data not updated");
                 }
                 catch (Exception e)
                 {
@@ -140,9 +253,70 @@ namespace DBManagement
             {
                 Console.WriteLine("id does not exist");
             }
-            
+
         }
-        
+        public void UpdateEmail(int id, string newEmail)
+        {
+            //int count; 
+            DataManipulationCommands obj = new DataManipulationCommands();
+            if (IDExist(id))
+            {
+                try
+                {
+                    obj.con.Open();
+                    string updateQuery = $"update users set email='{newEmail}' where id={id}";
+                    SqlCommand cmd = new SqlCommand(updateQuery, obj.con);
+                    int r = cmd.ExecuteNonQuery();
+                    if (r > 0) Console.WriteLine("Data updated successfully");
+                    else Console.WriteLine("data not updated");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error: " + e.Message);
+                }
+                finally
+                {
+                    obj.con.Close();
+                    Console.WriteLine("connection closed");
+                }
+            }
+            else
+            {
+                Console.WriteLine("id does not exist");
+            }
+
+        }
+        public void UpdateAge(int id, string newAge)
+        {
+            //int count; 
+            DataManipulationCommands obj = new DataManipulationCommands();
+            if (IDExist(id))
+            {
+                try
+                {
+                    obj.con.Open();
+                    string updateQuery = $"update users set email='{newAge}' where id={id}";
+                    SqlCommand cmd = new SqlCommand(updateQuery, obj.con);
+                    int r = cmd.ExecuteNonQuery();
+                    if (r > 0) Console.WriteLine("Data updated successfully");
+                    else Console.WriteLine("data not updated");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error: " + e.Message);
+                }
+                finally
+                {
+                    obj.con.Close();
+                    Console.WriteLine("connection closed");
+                }
+            }
+            else
+            {
+                Console.WriteLine("id does not exist");
+            }
+
+        }
         public bool IDExist(int id)
         {
             DataManipulationCommands obj = new DataManipulationCommands();
